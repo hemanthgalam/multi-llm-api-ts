@@ -16,8 +16,8 @@ This package provides interfaces and implementations to interact with Large Lang
 1. **Clone the repository**:
 
     ```bash
-    git clone https://github.com/your-repo/llm-package.git
-    cd llm-package
+    git clone https://github.com/hemanthgalam/multi-llm-api-ts
+    cd multi-llm-api
     ```
 
 2. **Install dependencies**:
@@ -54,15 +54,14 @@ This package provides interfaces and implementations to interact with Large Lang
    GEMINI_MODEL=gemini-1
 
 ```typescript
-2. **Import the providers in your code**:
+// 2. Import the providers in your code:
 
 
 import { OpenAIProvider } from './src/providers/openai';
 import { ClaudeProvider } from './src/providers/claude';
 import { GeminiProvider } from './src/providers/gemini';
 
-
-2. **Configure and use the providers**:
+// 2. Configure and use the providers:
 
 ## OpenAIProvider Example:
 
@@ -130,7 +129,7 @@ async function streamGeminiResponse() {
   }
 }
 
-2. **Log Request and Response Time (Optional)**:
+// 3. **Log Request and Response Time (Optional)**:
 
 import { logRequestResponseTime } from './logger';
 
