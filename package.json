@@ -17,6 +17,9 @@
     "axios": "^1.7.9",
     "dotenv": "^16.4.7"
   },
+  "publishConfig": {
+    "registry": "https://www.npmjs.com/package/multi-llm-package"
+  },
   "devDependencies": {
     "@eslint/js": "^9.16.0",
     "@types/jest": "^29.5.14",
