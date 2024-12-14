@@ -139,6 +139,31 @@ const endTime = Date.now();
 
 logRequestResponseTime(startTime, endTime, "POST", endpoint, requestPayload, responseData);
 ```
+## DefaultLLMProvider for Hugging Face API
+The DefaultLLMProvider provides an abstraction layer to interact with Hugging Face models such as gpt2 or llama-3.3-instruct without the need for explicit API key configuration.
+
+```typescript
+const huggingfaceConfig = {
+  apiKey: process.env.HUGGINGFACE_API_KEY,    // API key for Hugging Face
+  model: 'gpt2',                                // Default model (can be overridden for different models)
+  endpoint: 'https://api-inference.huggingface.co/models', // Hugging Face API endpoint
+};
+
+const huggingfaceProvider = new DefaultLLMProvider(huggingfaceConfig);
+
+async function getHuggingfaceResponse() {
+  const response = await huggingfaceProvider.generateText("What is the capital of France?");
+  console.log(response.text); // Output: "Paris"
+}
+
+async function streamHuggingfaceResponse() {
+  const responseStream = huggingfaceProvider.streamText("Generate long-form content...");
+  for await (const chunk of responseStream) {
+    console.log(chunk.text); // Stream large content in chunks
+  }
+}
+```
+
 ## Contribution
 
 Contributions are welcome! Feel free to fork the repository, make your changes, and submit a pull request.
