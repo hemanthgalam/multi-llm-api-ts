@@ -14,5 +14,10 @@ export const config = {
       endpoint: process.env.GEMINI_ENDPOINT || "https://gemini.example.com/v1/completions",
       defaultModel: process.env.GEMINI_MODEL || "gemini-1",
     },
+    llm: {
+        apiKey: process.env.HUGGING_FACE_API_KEY || "",
+        endpoint: process.env.HUGGING_FACE_ENDPOINT || "https://api-inference.huggingface.co/models",
+        defaultModel: process.env.HUGGING_FACE_MODEL || "gpt2",
+    },
   };
   
